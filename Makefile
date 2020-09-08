@@ -7,4 +7,7 @@ build:
 run:
 	@poetry run brain-games
 
-.PHONY: install build
+lint:
+	@poetry run flake8 brain_games
+
+.PHONY: install build lint

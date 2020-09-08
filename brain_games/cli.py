@@ -1,6 +1,9 @@
+"""Brain Games command-line user interface."""
+
 import prompt
 
 
 def welcome_user():
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}!")
+    """Ask a user name and print a greeting."""
+    name = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(name))
