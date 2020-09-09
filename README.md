@@ -5,8 +5,22 @@
 
 The training project on the Python Software Development course on [Hexlet.io](https://ru.hexlet.io/professions/python/projects/49)
 
+## Installation
+You can install Brain Games using [pip](https://pip.pypa.io/en/stable/). Just run in your terminal:
+```bash
+pip install -i https://test.pypi.org/simple/ bayborodin-brain-games --extra-index-url https://pypi.org/simple
+```
+
+## Usage
+| To play, execute    | Description |
+| -----------------   | ----------- |
+| ```brain-even```    | Number is even or odd? |
+
+[![asciicast](https://asciinema.org/a/358601.svg)](https://asciinema.org/a/358601)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
