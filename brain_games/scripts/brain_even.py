@@ -1,7 +1,7 @@
 """An Even game startup script."""
 
 from brain_games import launcher
-from games.brain_even_game import run
+from brain_games.games.brain_even_game import run
 
 
 def main():
