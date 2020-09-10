@@ -1,4 +1,5 @@
 """An Even game."""
+
 import random
 
 import prompt
