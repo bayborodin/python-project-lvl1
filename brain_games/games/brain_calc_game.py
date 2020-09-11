@@ -1,8 +1,7 @@
 """A calc game."""
 
-from random import SystemRandom
-
 from brain_games.launcher import launch
+from brain_games.randomizer import random_item, random_tuple
 
 RULE = 'What is the result of the expression?'
 
@@ -19,8 +18,8 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operator = _get_random_operator()
-    operands = _get_random_operands()
+    operator = _random_operator()
+    operands = random_tuple()
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )
@@ -36,9 +35,5 @@ def _calculate(operator, operand_a, operand_b):
     return operand_a * operand_b
 
 
-def _get_random_operator():
-    return SystemRandom().choice(['+', '-', '*'])
-
-
-def _get_random_operands():
-    return SystemRandom().sample(range(1, 100), 2)
+def _random_operator():
+    return random_item(['+', '-', '*'])

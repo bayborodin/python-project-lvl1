@@ -1,8 +1,8 @@
 """A GCD game."""
 
-from random import SystemRandom
-
+from brain_games.game_math import gcf
 from brain_games.launcher import launch
+from brain_games.randomizer import random_tuple
 
 RULE = 'Find the greatest common divisor of given numbers.'
 
@@ -19,18 +19,7 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operands = _get_random_operands()
+    operands = random_tuple()
     question = '{0} {1}'.format(*operands)
-    answer = _get_gcd(*operands)
+    answer = gcf(*operands)
     return (question, answer)
-
-
-def _get_random_operands():
-    return SystemRandom().sample(range(1, 100), 2)
-
-
-def _get_gcd(operand_a, operand_b):
-    if operand_b == 0:
-        return abs(operand_a)
-    operand_c = operand_a % operand_b
-    return _get_gcd(operand_b, operand_c)
