@@ -24,11 +24,11 @@ def generate_qa():
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )
-    answer = _get_answer(operator, *operands)
+    answer = _calculate(operator, *operands)
     return (question, answer)
 
 
-def _get_answer(operator, operand_a, operand_b):
+def _calculate(operator, operand_a, operand_b):
     if operator == '+':
         return operand_a + operand_b
     elif operator == '-':
