@@ -17,6 +17,7 @@ pip install -i https://test.pypi.org/simple/ bayborodin-brain-games --extra-inde
 | -----------------   | ----------- |
 | ```brain-even```    | Number is even or odd? |
 | ```brain-calc```    | Find a result of the expression |
+| ```brain-gcd```     | Find GCD of the given numbers |
 
 ## Demo
 
@@ -25,6 +26,9 @@ pip install -i https://test.pypi.org/simple/ bayborodin-brain-games --extra-inde
 
 ### brain-calc
 [![asciicast](https://asciinema.org/a/358837.svg)](https://asciinema.org/a/358837)
+
+### brain-gcd
+[![asciicast](https://asciinema.org/a/359111.svg)](https://asciinema.org/a/359111)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
