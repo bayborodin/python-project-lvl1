@@ -1,31 +1,32 @@
 """An Even game."""
 
-import random
+from random import SystemRandom
 
-import prompt
+from brain_games.launcher import launch
+
+RULE = 'Answer "yes" if number even otherwise answer "no".'
 
 
-def run(user_name):
+def start():
+    """Launch the Even game."""
+    launch(generate_qa, RULE)
+
+
+def generate_qa():
     """
-    Launch an Even game.
+    Generate a question and an answer of the game.
 
-    Parameters:
-        user_name (str): The current user name.
+    Returns:
+        (set): The pair of a question and an answer.
     """
-    is_winner = True
-    samples = random.sample(range(1, 100), 3)
-    for sample in samples:
-        correct_answer = 'yes' if sample % 2 == 0 else 'no'
-        print('Question: {0}'.format(sample))
-        answer = prompt.string('Your answer: ')
-        if answer == correct_answer:
-            print('Correct!')
-        else:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-                answer, correct_answer,
-            ))
-            is_winner = False
-            break
+    question = _get_random_number()
+    answer = _is_even(question)
+    return (question, answer)
 
-    if is_winner:
-        print('Congratulations, {0}!'.format(user_name))
+
+def _get_random_number():
+    return SystemRandom().randint(1, 100)
+
+
+def _is_even(num):
+    return 'yes' if num % 2 == 0 else 'no'

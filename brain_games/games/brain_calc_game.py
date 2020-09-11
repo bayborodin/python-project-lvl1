@@ -2,41 +2,33 @@
 
 from random import SystemRandom
 
-import prompt
+from brain_games.launcher import launch
+
+RULE = 'What is the result of the expression?'
 
 
-def run(user_name):
+def start():
+    """Launch the Calc game."""
+    launch(generate_qa, RULE)
+
+
+def generate_qa():
     """
-    Launch a Calc game.
+    Generate a question and an answer of the game.
 
-    Parameters:
-        user_name (str): The current user name.
+    Returns:
+        (set): The pair of a question and an answer.
     """
-    cnt = 3
-    while cnt > 0:
-        cnt -= 1
-
-        operator = _get_random_operator()
-        operands = _get_random_operands()
-        correct_answer = _calculate(operator, *operands)
-
-        print('Question: {0} {1} {2}'.format(
-            operands[0], operator, operands[1],
-        ))
-        answer = prompt.integer('Your answer: ')
-        if answer == correct_answer:
-            print('Correct!')
-        else:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-                answer, correct_answer,
-            ))
-            print("Let's try again, {0}!".format(user_name))
-            break
-    else:
-        print('Congratulations, {0}!'.format(user_name))
+    operator = _get_random_operator()
+    operands = _get_random_operands()
+    question = '{0} {1} {2}'.format(
+        operands[0], operator, operands[1],
+    )
+    answer = _get_answer(operator, *operands)
+    return (question, answer)
 
 
-def _calculate(operator, operand_a, operand_b):
+def _get_answer(operator, operand_a, operand_b):
     if operator == '+':
         return operand_a + operand_b
     elif operator == '-':
@@ -45,10 +37,8 @@ def _calculate(operator, operand_a, operand_b):
 
 
 def _get_random_operator():
-    rnd = SystemRandom()
-    return rnd.choice(['+', '-', '*'])
+    return SystemRandom().choice(['+', '-', '*'])
 
 
 def _get_random_operands():
-    rnd = SystemRandom()
-    return rnd.sample(range(1, 100), 2)
+    return SystemRandom().sample(range(1, 100), 2)

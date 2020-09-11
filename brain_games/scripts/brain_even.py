@@ -1,14 +1,10 @@
 """An Even game startup script."""
-
-from brain_games import launcher
-from brain_games.games.brain_even_game import run
+from brain_games.games.brain_even_game import start
 
 
 def main():
     """Run the Even game."""
-    game_info = 'Answer "yes" if number even otherwise answer "no".'
-    user_name = launcher.start_game(game_info)
-    run(user_name)
+    start()
 
 
 if __name__ == '__main__':
