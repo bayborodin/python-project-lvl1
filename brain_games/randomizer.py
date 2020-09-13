@@ -48,7 +48,7 @@ def random_int(begin=0, end=None):
     if not end:
         end = MAX_INT_SEQUENCE
 
-    return SystemRandom().randint(begin, end)
+    return SystemRandom().randint(begin, end - 1)
 
 
 def random_progression():

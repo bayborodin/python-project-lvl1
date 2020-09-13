@@ -5,7 +5,7 @@ import prompt
 GAME_CYCLE_ATTEMPTS = 3  # number of attempts in the game
 
 
-def _show_game_title(rule):
+def _show_game_rule(rule):
     print('\nWelcome to the Brain Games!')
     print('{0}\n'.format(rule))
 
@@ -32,9 +32,9 @@ def _end_game_win(user_name):
     print('Congratulations, {0}!'.format(user_name))
 
 
-def _run_game_cicle(generate_qa, user_name):
+def _run_game_cycle(generate_qa, user_name):
     attempt = 0
-    while attempt < GAME_CYCLE_ATTEMPTS:
+    for attempt in range(0, GAME_CYCLE_ATTEMPTS):
         attempt += 1
 
         question, correct_answer = generate_qa()
@@ -61,6 +61,6 @@ def launch(generate_qa, rule):
         generate_qa (function): The question/answer values generator.
         rule (str): The short game rule.
     """
-    _show_game_title(rule)
+    _show_game_rule(rule)
     user_name = _ask_user_name()
-    _run_game_cicle(generate_qa, user_name)
+    _run_game_cycle(generate_qa, user_name)
