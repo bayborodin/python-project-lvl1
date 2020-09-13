@@ -33,7 +33,7 @@ def _end_game_win(user_name):
 
 
 def _run_game_cycle(generate_qa, user_name):
-    for _ in range(0, GAME_CYCLE_ATTEMPTS):
+    for _ in range(0, GAME_CYCLE_ATTEMPTS):  # noqa: WPS122
         question, correct_answer = generate_qa()
         print('Question: {0}'.format(question))
 
