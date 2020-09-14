@@ -1,14 +1,12 @@
 """A progression game."""
 
-from brain_games.launcher import launch
-from brain_games.randomizer import random_int, random_progression
+from random import SystemRandom
 
 RULE = 'What number is missing in the progression?'
-
-
-def start():
-    """Launch the Progression game."""
-    launch(generate_qa, RULE)
+MAX_PROGRESSION_FIRST_TERM = 10
+MIN_PROGRESSION_STEP = 1
+MAX_PROGRESSION_STEP = 10
+PROGRESSION_LENGTH = 10
 
 
 def generate_qa():
@@ -18,10 +16,18 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    progression = random_progression()
-    missing_index = random_int(0, len(progression))
+    progression = _get_random_progression()
+    missing_index = SystemRandom().randint(0, len(progression) - 1)
     answer = progression[missing_index]
     progression[missing_index] = '..'
     question = ' '.join([str(elem) for elem in progression])
 
     return (question, answer)
+
+
+def _get_random_progression():
+    begin = SystemRandom().randint(0, MAX_PROGRESSION_FIRST_TERM)
+    step = SystemRandom().randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
+    last_number = begin + (step * PROGRESSION_LENGTH)
+
+    return range(begin, last_number, step)

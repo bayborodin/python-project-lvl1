@@ -1,14 +1,9 @@
 """An Even game."""
+from random import SystemRandom
 
-from brain_games.launcher import launch
-from brain_games.randomizer import random_int
+from brain_games.config import MAX_INT_SEQUENCE
 
 RULE = 'Answer "yes" if number even otherwise answer "no".'
-
-
-def start():
-    """Launch the Even game."""
-    launch(generate_qa, RULE)
 
 
 def generate_qa():
@@ -18,7 +13,7 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    question = random_int()
+    question = SystemRandom().randint(0, MAX_INT_SEQUENCE - 1)
     answer = _is_even(question)
     return (question, answer)
 

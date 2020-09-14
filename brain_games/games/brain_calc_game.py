@@ -1,14 +1,10 @@
 """A calc game."""
 
-from brain_games.launcher import launch
-from brain_games.randomizer import random_item, random_tuple
+from random import SystemRandom
+
+from brain_games.config import MAX_INT_SEQUENCE
 
 RULE = 'What is the result of the expression?'
-
-
-def start():
-    """Launch the Calc game."""
-    launch(generate_qa, RULE)
 
 
 def generate_qa():
@@ -19,7 +15,7 @@ def generate_qa():
         (set): The pair of a question and an answer.
     """
     operator = _random_operator()
-    operands = random_tuple()
+    operands = _random_tuple()
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )
@@ -36,4 +32,8 @@ def _calculate(operator, operand_a, operand_b):
 
 
 def _random_operator():
-    return random_item(['+', '-', '*'])
+    return SystemRandom().choice(['+', '-', '*'])
+
+
+def _random_tuple():
+    return SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)

@@ -1,15 +1,11 @@
 """A GCD game."""
 
-from brain_games.game_math import gcf
-from brain_games.launcher import launch
-from brain_games.randomizer import random_tuple
+import math
+from random import SystemRandom
+
+from brain_games.config import MAX_INT_SEQUENCE
 
 RULE = 'Find the greatest common divisor of given numbers.'
-
-
-def start():
-    """Launch a GCD game."""
-    launch(generate_qa, RULE)
 
 
 def generate_qa():
@@ -19,7 +15,15 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operands = random_tuple()
+    operands = _random_tuple()
     question = '{0} {1}'.format(*operands)
-    answer = gcf(*operands)
+    answer = _gcd()
     return (question, answer)
+
+
+def _random_tuple():
+    return SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
+
+
+def _gcd(num1, num2):
+    return math.gcd(num1, num2)

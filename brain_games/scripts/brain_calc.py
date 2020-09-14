@@ -1,10 +1,11 @@
 """A Calc game startup script."""
-from brain_games.games.brain_calc_game import start as start_calc_game
+from brain_games.games import brain_calc_game as game
+from brain_games.launcher import launch
 
 
 def main():
     """Run the Calc game."""
-    start_calc_game()
+    launch(game)
 
 
 if __name__ == '__main__':

@@ -1,10 +1,11 @@
 """A Progression game startup script."""
-from brain_games.games.brain_ap_game import start as start_ap_game
+from brain_games.games import brain_ap_game as game
+from brain_games.launcher import launch
 
 
 def main():
     """Run the Progression game."""
-    start_ap_game()
+    launch(game)
 
 
 if __name__ == '__main__':

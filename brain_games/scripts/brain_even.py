@@ -1,10 +1,11 @@
 """An Even game startup script."""
-from brain_games.games.brain_even_game import start as start_even_game
+from brain_games.games import brain_even_game as game
+from brain_games.launcher import launch
 
 
 def main():
     """Run the Even game."""
-    start_even_game()
+    launch(game)
 
 
 if __name__ == '__main__':

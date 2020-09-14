@@ -50,14 +50,13 @@ def _run_game_cycle(generate_qa, user_name):
     _end_game_win(user_name)
 
 
-def launch(generate_qa, rule):
+def launch(game):
     """
     Launch a game with a given rule.
 
     Parameters:
-        generate_qa (function): The question/answer values generator.
-        rule (str): The short game rule.
+        game (function): The game logic function.
     """
-    _show_game_rule(rule)
+    _show_game_rule(game.RULE)
     user_name = _ask_user_name()
-    _run_game_cycle(generate_qa, user_name)
+    _run_game_cycle(game.generate_qa, user_name)

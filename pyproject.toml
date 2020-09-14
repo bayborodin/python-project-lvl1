@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayborodin_brain_games"
-version = "0.5.2"
+version = "0.6.0"
 description = "Hexlet Brain Games Project"
 authors = ["Nicholas Bayborodin <nicholas.bayborodin@gmail.com>"]
 packages = [
@@ -21,6 +21,7 @@ brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcf:main"
 brain-progression = "brain_games.scripts.brain_ap:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
 
 [build-system]
 requires = ["poetry>=0.12"]
