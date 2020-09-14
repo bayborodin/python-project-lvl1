@@ -9,7 +9,7 @@ RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 def generate_qa():
     """
-    Generate a question and an answer of the game.
+    Generate a question and an answer of the Prime game.
 
     Returns:
         (set): The pair of a question and an answer.

@@ -11,7 +11,7 @@ PROGRESSION_LENGTH = 10
 
 def generate_qa():
     """
-    Generate a question and an answer of the game.
+    Generate a question and an answer of the Progression game.
 
     Returns:
         (set): The pair of a question and an answer.

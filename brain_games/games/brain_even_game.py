@@ -8,7 +8,7 @@ RULE = 'Answer "yes" if number even otherwise answer "no".'
 
 def generate_qa():
     """
-    Generate a question and an answer of the game.
+    Generate a question and an answer of the Even game.
 
     Returns:
         (set): The pair of a question and an answer.
