@@ -20,10 +20,9 @@ def generate_qa():
 
 
 def _is_prime(num):
-    if num > 1:
-        for divider in range(2, num):  # noqa: WPS500
-            if num % divider == 0:
-                return 'no'
-        else:
-            return 'yes'
-    return 'no'
+    if num < 2:
+        return 'no'
+    for divider in range(2, num // 2):
+        if num % divider == 0:
+            return 'no'
+    return 'yes'
