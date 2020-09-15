@@ -19,6 +19,7 @@ pip install -i https://test.pypi.org/simple/ bayborodin-brain-games --extra-inde
 | ```brain-calc```            | Find a result of the expression |
 | ```brain-gcd```             | Find GCD of the given numbers   |
 | ```brain-progression```     | Find GCD of the given numbers   |
+| ```brain-prime```           | Number is prime or not?         |
 
 ## Demo
 
@@ -33,6 +34,9 @@ pip install -i https://test.pypi.org/simple/ bayborodin-brain-games --extra-inde
 
 ## brain-progression
 [![asciicast](https://asciinema.org/a/359440.svg)](https://asciinema.org/a/359440)
+
+## brain-prime
+[![asciicast](https://asciinema.org/a/359825.svg)](https://asciinema.org/a/359825)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
