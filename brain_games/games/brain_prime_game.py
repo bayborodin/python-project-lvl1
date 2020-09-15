@@ -20,6 +20,15 @@ def generate_qa():
 
 
 def _is_prime(num):
+    """
+    Check if the given number is prime.
+
+    Parameters:
+        num (int): A number to check.
+
+    Returns:
+        (str): Answer is a number prime or not.
+    """
     if num < 2:
         return 'no'
     for divider in range(2, num // 2):

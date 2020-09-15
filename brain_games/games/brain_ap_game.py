@@ -26,6 +26,12 @@ def generate_qa():
 
 
 def _get_random_progression():
+    """
+    Generate random ariphmetic progression.
+
+    Returns:
+        (list): Random ariphmetic progression.
+    """
     begin = SystemRandom().randint(0, MAX_PROGRESSION_FIRST_TERM)
     step = SystemRandom().randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
     last_number = begin + (step * PROGRESSION_LENGTH)

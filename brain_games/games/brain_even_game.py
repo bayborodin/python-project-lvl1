@@ -14,9 +14,5 @@ def generate_qa():
         (set): The pair of a question and an answer.
     """
     question = SystemRandom().randint(0, MAX_INT_SEQUENCE - 1)
-    answer = _is_even(question)
+    answer = 'yes' if question % 2 == 0 else 'no'
     return (question, answer)
-
-
-def _is_even(num):
-    return 'yes' if num % 2 == 0 else 'no'

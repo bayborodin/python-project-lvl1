@@ -15,15 +15,21 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operands = _random_tuple()
+    operands = SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
     question = '{0} {1}'.format(*operands)
     answer = _gcd()
     return (question, answer)
 
 
-def _random_tuple():
-    return SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
-
-
 def _gcd(num1, num2):
+    """
+    Find the greatest common factor of two numbers.
+
+    Parameters:
+        num1 (int): The first integer number.
+        num2 (int): The second integer number.
+
+    Returns:
+        (int): The greatest common factor.
+    """
     return math.gcd(num1, num2)

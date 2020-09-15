@@ -14,8 +14,8 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operator = _random_operator()
-    operands = _random_tuple()
+    operator = SystemRandom().choice(['+', '-', '*'])
+    operands = SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )
@@ -24,16 +24,19 @@ def generate_qa():
 
 
 def _calculate(operator, operand_a, operand_b):
+    """
+    Apply operator to given operands.
+
+    Parameters:
+        operator (str): The symbol of ariphmetic operator.
+        operand_a (int): The first operand.
+        operand_b (int): The second operand.
+
+    Returns:
+        (int): The result of ariphmetic operation.
+    """
     if operator == '+':
         return operand_a + operand_b
     elif operator == '-':
         return operand_a - operand_b
     return operand_a * operand_b
-
-
-def _random_operator():
-    return SystemRandom().choice(['+', '-', '*'])
-
-
-def _random_tuple():
-    return SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)

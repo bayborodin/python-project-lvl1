@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayborodin_brain_games"
-version = "0.6.0"
+version = "0.6.1"
 description = "Hexlet Brain Games Project"
 authors = ["Nicholas Bayborodin <nicholas.bayborodin@gmail.com>"]
 packages = [
