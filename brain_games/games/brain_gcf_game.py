@@ -3,9 +3,8 @@
 import math
 from random import SystemRandom
 
-from brain_games.config import MAX_INT_SEQUENCE
-
-RULE = 'Find the greatest common divisor of given numbers.'
+MAX_INT_SEQUENCE = 20
+RULES = 'Find the greatest common divisor of given numbers.'
 
 
 def generate_qa():
@@ -17,7 +16,7 @@ def generate_qa():
     """
     operands = SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
     question = '{0} {1}'.format(*operands)
-    answer = _gcd()
+    answer = _gcd(*operands)
     return (question, answer)
 
 

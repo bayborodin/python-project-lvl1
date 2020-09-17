@@ -2,9 +2,8 @@
 
 from random import SystemRandom
 
-from brain_games.config import MAX_INT_SEQUENCE
-
-RULE = 'What is the result of the expression?'
+MAX_INT_SEQUENCE = 20
+RULES = 'What is the result of the expression?'
 
 
 def generate_qa():
@@ -34,9 +33,15 @@ def _calculate(operator, operand_a, operand_b):
 
     Returns:
         (int): The result of ariphmetic operation.
+
+    Raises:
+        ValueError: Unknown ariphmetic operator.
     """
     if operator == '+':
         return operand_a + operand_b
     elif operator == '-':
         return operand_a - operand_b
-    return operand_a * operand_b
+    elif operator == '*':
+        return operand_a * operand_b
+
+    raise ValueError('Unknown ariphmetic operator: {0}'.format(operator))

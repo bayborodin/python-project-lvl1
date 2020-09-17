@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayborodin_brain_games"
-version = "0.6.1"
+version = "0.6.2"
 description = "Hexlet Brain Games Project"
 authors = ["Nicholas Bayborodin <nicholas.bayborodin@gmail.com>"]
 packages = [
@@ -16,7 +16,6 @@ wemake-python-styleguide = "^0.14.1"
 autopep8 = "^1.5.4"
 
 [tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcf:main"

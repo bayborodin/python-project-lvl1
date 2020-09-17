@@ -2,7 +2,7 @@
 
 from random import SystemRandom
 
-RULE = 'What number is missing in the progression?'
+RULES = 'What number is missing in the progression?'
 MAX_PROGRESSION_FIRST_TERM = 10
 MIN_PROGRESSION_STEP = 1
 MAX_PROGRESSION_STEP = 10
@@ -20,7 +20,7 @@ def generate_qa():
     missing_index = SystemRandom().randint(0, len(progression) - 1)
     answer = progression[missing_index]
     progression[missing_index] = '..'
-    question = ' '.join([str(elem) for elem in progression])
+    question = ' '.join(str(elem) for elem in progression)
 
     return (question, answer)
 
@@ -36,4 +36,4 @@ def _get_random_progression():
     step = SystemRandom().randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
     last_number = begin + (step * PROGRESSION_LENGTH)
 
-    return range(begin, last_number, step)
+    return list(range(begin, last_number, step))

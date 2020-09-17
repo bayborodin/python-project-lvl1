@@ -1,9 +1,8 @@
 """An Even game."""
 from random import SystemRandom
 
-from brain_games.config import MAX_INT_SEQUENCE
-
-RULE = 'Answer "yes" if number even otherwise answer "no".'
+MAX_INT_SEQUENCE = 20
+RULES = 'Answer "yes" if number even otherwise answer "no".'
 
 
 def generate_qa():
