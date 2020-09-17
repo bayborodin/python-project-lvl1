@@ -1,5 +1,5 @@
 """An Even game."""
-from random import SystemRandom
+from random import randint
 
 MAX_INT_SEQUENCE = 20
 RULES = 'Answer "yes" if number even otherwise answer "no".'
@@ -12,6 +12,6 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    question = SystemRandom().randint(0, MAX_INT_SEQUENCE - 1)
+    question = randint(0, MAX_INT_SEQUENCE - 1)  # noqa: S311
     answer = 'yes' if question % 2 == 0 else 'no'
     return (question, answer)

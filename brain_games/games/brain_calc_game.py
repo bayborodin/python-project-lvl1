@@ -1,6 +1,6 @@
 """A calc game."""
 
-from random import SystemRandom
+from random import choice, sample
 
 MAX_INT_SEQUENCE = 20
 RULES = 'What is the result of the expression?'
@@ -13,8 +13,8 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operator = SystemRandom().choice(['+', '-', '*'])
-    operands = SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
+    operator = choice(['+', '-', '*'])  # noqa: S311 (not sec purpose)
+    operands = sample(range(0, MAX_INT_SEQUENCE), 2)
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )

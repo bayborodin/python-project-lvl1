@@ -1,7 +1,6 @@
 """A GCD game."""
 
-import math
-from random import SystemRandom
+from random import sample
 
 MAX_INT_SEQUENCE = 20
 RULES = 'Find the greatest common divisor of given numbers.'
@@ -14,7 +13,7 @@ def generate_qa():
     Returns:
         (set): The pair of a question and an answer.
     """
-    operands = SystemRandom().sample(range(0, MAX_INT_SEQUENCE), 2)
+    operands = sample(range(0, MAX_INT_SEQUENCE), 2)
     question = '{0} {1}'.format(*operands)
     answer = _gcd(*operands)
     return (question, answer)
@@ -31,4 +30,7 @@ def _gcd(num1, num2):
     Returns:
         (int): The greatest common factor.
     """
-    return math.gcd(num1, num2)
+    if num2 == 0:
+        return abs(num1)
+    num3 = num1 % num2
+    return _gcd(num2, num3)
