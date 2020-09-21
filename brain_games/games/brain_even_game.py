@@ -1,17 +1,18 @@
 """An Even game."""
-from random import randint
+import random
+from typing import Tuple
 
-MAX_INT_SEQUENCE = 20
+MAX_INT = 20
 RULES = 'Answer "yes" if number even otherwise answer "no".'
 
 
-def generate_qa():
+def generate_qa() -> Tuple[str, str]:
     """
     Generate a question and an answer of the Even game.
 
     Returns:
-        (set): The pair of a question and an answer.
+        The pair of a question and an answer.
     """
-    question = randint(0, MAX_INT_SEQUENCE - 1)  # noqa: S311
+    question = random.randint(0, MAX_INT - 1)  # noqa: S311 (not sec purpose)
     answer = 'yes' if question % 2 == 0 else 'no'
-    return (question, answer)
+    return (question, str(answer))

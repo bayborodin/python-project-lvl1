@@ -1,32 +1,33 @@
 """The Prime Number game."""
 
-from random import randint
+import random
+from typing import Tuple
 
-MAX_INT_SEQUENCE = 20
+MAX_INT = 20
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def generate_qa():
+def generate_qa() -> Tuple[str, str]:
     """
     Generate a question and an answer of the Prime game.
 
     Returns:
-        (set): The pair of a question and an answer.
+        The pair of a question and an answer.
     """
-    question = randint(0, MAX_INT_SEQUENCE - 1)  # noqa: S311 (not sec purpose)
+    question = random.randint(0, MAX_INT - 1)  # noqa: S311 (not sec purpose)
     answer = 'yes' if _is_prime(question) else 'no'
-    return (question, answer)
+    return (question, str(answer))
 
 
-def _is_prime(num):
+def _is_prime(num: int) -> bool:
     """
     Check if the given number is prime.
 
     Parameters:
-        num (int): A number to check.
+        num: A number to check.
 
     Returns:
-        (str): Answer is a number prime or not.
+        Answer is a number prime or not.
     """
     if num < 2:
         return False

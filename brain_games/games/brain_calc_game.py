@@ -1,38 +1,39 @@
 """A calc game."""
 
-from random import choice, sample
+import random
+from typing import Tuple
 
-MAX_INT_SEQUENCE = 20
+MAX_INT = 20
 RULES = 'What is the result of the expression?'
 
 
-def generate_qa():
+def generate_qa() -> Tuple[str, str]:
     """
     Generate a question and an answer of the Calc game.
 
     Returns:
-        (set): The pair of a question and an answer.
+        The pair of a question and an answer.
     """
-    operator = choice(['+', '-', '*'])  # noqa: S311 (not sec purpose)
-    operands = sample(range(0, MAX_INT_SEQUENCE), 2)
+    operator = random.choice(['+', '-', '*'])  # noqa: S311 (not sec purpose)
+    operands = random.sample(range(0, MAX_INT), 2)
     question = '{0} {1} {2}'.format(
         operands[0], operator, operands[1],
     )
     answer = _calculate(operator, *operands)
-    return (question, answer)
+    return (question, str(answer))
 
 
-def _calculate(operator, operand_a, operand_b):
+def _calculate(operator: str, operand_a: int, operand_b: int) -> int:
     """
     Apply operator to given operands.
 
     Parameters:
-        operator (str): The symbol of ariphmetic operator.
-        operand_a (int): The first operand.
-        operand_b (int): The second operand.
+        operator: The symbol of ariphmetic operator.
+        operand_a: The first operand.
+        operand_b: The second operand.
 
     Returns:
-        (int): The result of ariphmetic operation.
+        The result of ariphmetic operation.
 
     Raises:
         ValueError: Unknown ariphmetic operator.
