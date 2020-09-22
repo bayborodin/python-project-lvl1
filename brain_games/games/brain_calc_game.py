@@ -4,7 +4,7 @@ import random
 from typing import Tuple
 
 MAX_INT = 20
-RULES = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 
 
 def generate_qa() -> Tuple[str, str]:

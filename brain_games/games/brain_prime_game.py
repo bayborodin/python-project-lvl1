@@ -3,8 +3,8 @@
 import random
 from typing import Tuple
 
-MAX_INT = 20
-RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+MAX_INT = 19
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def generate_qa() -> Tuple[str, str]:
@@ -14,7 +14,7 @@ def generate_qa() -> Tuple[str, str]:
     Returns:
         The pair of a question and an answer.
     """
-    question = random.randint(0, MAX_INT - 1)  # noqa: S311 (not sec purpose)
+    question = random.randint(0, MAX_INT)  # noqa: S311 (not sec purpose)
     answer = 'yes' if _is_prime(question) else 'no'
     return (question, str(answer))
 

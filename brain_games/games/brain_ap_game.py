@@ -3,7 +3,7 @@
 import random
 from typing import List, Tuple
 
-RULES = 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
 MAX_PROGRESSION_FIRST_TERM = 10
 MIN_PROGRESSION_STEP = 1
 MAX_PROGRESSION_STEP = 10

@@ -4,18 +4,18 @@ from typing import Callable
 
 import prompt
 
-GAME_CYCLE_ATTEMPTS = 3  # number of attempts in the game
+ATTEMPTS_COUNT = 3  # number of attempts in the game
 
 
-def launch(game: Callable) -> None:
+def launch(game) -> None:
     """
-    Launch a game with a given rules.
+    Launch a game with a given description.
 
     Parameters:
         game: The game logic function.
     """
     print('\nWelcome to the Brain Games!\n')
-    print(game.RULES)
+    print(game.DESCRIPTION)
 
     user_name = prompt.string('May I have your name? ')
     print('Hello, {0}!\n'.format(user_name))
@@ -24,7 +24,7 @@ def launch(game: Callable) -> None:
 
 
 def _run_game_loop(generate_qa: Callable, user_name: str) -> None:
-    for _ in range(0, GAME_CYCLE_ATTEMPTS):  # noqa: WPS122 see bit.ly/3mrfIUh
+    for _ in range(0, ATTEMPTS_COUNT):  # noqa: WPS122 see bit.ly/3mrfIUh
         question, correct_answer = generate_qa()
         print('Question: {0}'.format(question))
 

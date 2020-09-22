@@ -3,7 +3,7 @@ import random
 from typing import Tuple
 
 MAX_INT = 20
-RULES = 'Find the greatest common divisor of given numbers.'
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 
 def generate_qa() -> Tuple[str, str]:
