@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bayborodin_brain_games"
-version = "1.0.2"
+version = "1.0.3"
 description = "Hexlet Brain Games Project"
 authors = ["Nicholas Bayborodin <nicholas.bayborodin@gmail.com>"]
 packages = [
@@ -16,11 +16,11 @@ wemake-python-styleguide = "^0.14.1"
 autopep8 = "^1.5.4"
 
 [tool.poetry.scripts]
-brain-even = "brain_games.scripts.brain_even:main"
-brain-calc = "brain_games.scripts.brain_calc:main"
-brain-gcd = "brain_games.scripts.brain_gcd:main"
-brain-progression = "brain_games.scripts.brain_ap:main"
-brain-prime = "brain_games.scripts.brain_prime:main"
+brain-even = "brain_games.scripts.even_number:main"
+brain-calc = "brain_games.scripts.calculator:main"
+brain-gcd = "brain_games.scripts.greatest_common_divisor:main"
+brain-progression = "brain_games.scripts.arithmetic_progression:main"
+brain-prime = "brain_games.scripts.prime_number:main"
 
 [build-system]
 requires = ["poetry>=0.12"]

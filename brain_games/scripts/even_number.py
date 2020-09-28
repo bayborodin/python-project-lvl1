@@ -1,5 +1,5 @@
 """An Even game startup script."""
-from brain_games.games import brain_even_game as game
+from brain_games.games import even_number as game
 from brain_games.launcher import launch
 
 

@@ -1,5 +1,5 @@
 """A Calc game startup script."""
-from brain_games.games import brain_calc_game as game
+from brain_games.games import calculator as game
 from brain_games.launcher import launch
 
 

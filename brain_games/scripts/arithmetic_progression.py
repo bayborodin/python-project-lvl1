@@ -1,5 +1,5 @@
 """A Progression game startup script."""
-from brain_games.games import brain_ap_game as game
+from brain_games.games import arithmetic_progression as game
 from brain_games.launcher import launch
 
 
